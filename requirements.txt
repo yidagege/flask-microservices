@@ -7,3 +7,4 @@ MarkupSafe==1.0
 Werkzeug==0.14.1
 Flask-SQLAlchemy==2.3.2
 PyMySQL==0.8.0
+Flask-Testing==0.7.1
