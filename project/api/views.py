@@ -80,4 +80,29 @@ def get_user(user_id):
     finally:
         return jsonify(response_object), code
 
+@users_blueprint.route('/users', methods=['GET'])
+def get_users():
+    """获取所有的用户列表"""
+    users = User.query.all()
+    users_list = []
+    for user in users:
+        user_object = {
+            'id': user.id,
+            'username': user.username,
+            'email': user.email,
+            'created_at': user.created_at
+        }
+        users_list.append(user_object)
+    response_object = {
+        'status': 'success',
+        'data': {
+            'users': users_list
+        }
+    }
+    return jsonify(response_object), 200
+
+
+
+
+
         
