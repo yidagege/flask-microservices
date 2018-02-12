@@ -5,7 +5,7 @@ from project import db
 from project.api.models import User
 from sqlalchemy import exc
 
-users_blueprint = Blueprint('users', __name__)
+users_blueprint = Blueprint('users', __name__, template_folder='./templates')
 
 @users_blueprint.route('/ping', methods=['GET'])
 def ping_pong():
@@ -100,6 +100,11 @@ def get_users():
         }
     }
     return jsonify(response_object), 200
+
+@users_blueprint.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
 
 
 
