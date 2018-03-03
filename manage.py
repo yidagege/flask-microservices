@@ -16,7 +16,7 @@ COV = coverage.coverage(
     ]
 )
 COV.start()
-
+//2汉文化jf
 @manager.command
 def cov():
     """Runs the unit tests with coverage."""
