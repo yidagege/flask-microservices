@@ -18,6 +18,7 @@ coverage.assign_shortkeys = function () {
             }
         });
     });
+    //22344
 };
 
 // Create the events for the help panel.
